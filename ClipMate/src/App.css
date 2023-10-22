@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+.background {
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("../src/assets/andrea-donato-MNu0n-3BIKs-unsplash.jpg");
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

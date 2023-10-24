@@ -85,7 +85,7 @@ export default function Booking() {
               </div>
               <div className="flex flex-col mt-5">
                 <label htmlFor="">
-                  <span className="font-normal text-white">Select Package</span>
+                  <span className="font-normal text-white">Select Service</span>
                 </label>
                 <select className="select select-bordered w-full">
                   <option
@@ -101,7 +101,7 @@ export default function Booking() {
                 </select>
               </div>
               <div className="flex justify-center mt-5 mb-5">
-                <Button label="Make Appointment" />
+                <Button label="Make Appointment" className="btn btn-primary " />
               </div>
             </div>
           </div>

@@ -42,7 +42,7 @@ export default function Landingpage() {
       <div>
         <div>
           <div className="bg-neutral-800 pt-20 pb-20">
-            <div className="font-serif font-bold text-3xl text-center text-white">SERCIVCES</div>
+            <div className="font-serif font-bold text-3xl text-center text-white">SERVICES</div>
             <div className="columns-4 text-white justify-center flex gap-12 mt-16">
               <div className="bg-black w-64 h-64 rounded-3xl flex justify-center items-center">
                 <div>

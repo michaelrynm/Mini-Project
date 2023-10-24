@@ -10,7 +10,8 @@ export default function Navbar() {
     <div className="flex bg-zinc-800 p-6 justify-between">
       <div className="flex text-white gap-10">
         <Link to={"/"}>HOME</Link>
-        <p>BOOKING</p>
+        <Link to={"/booking"}>BOOKING</Link>
+        <Link to={"/profile"}>PROFILE</Link>
       </div>
       <div className="flex text-white gap-10">
         {isLogin ? (

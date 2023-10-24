@@ -1,12 +1,20 @@
 import React from "react";
 import Layout from "../components/layout";
 import Button from "../components/button";
+import { useNavigate } from "react-router-dom";
 
 import { BsScissors, BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { FaPumpSoap, FaWineBottle, FaLocationArrow } from "react-icons/fa";
 import { GiRazor } from "react-icons/gi";
 
 export default function Landingpage() {
+  const navigate = useNavigate()
+
+  const handleBooking = (e) => {
+    e.preventDefault()
+    navigate("/booking")
+  }
+
   return (
     <>
       <Layout />
@@ -24,6 +32,7 @@ export default function Landingpage() {
           <Button
             label="Book Now"
             className="text-white bg-yellow-600 rounded-full w-32 h-16 font-serif font-bold"
+            onClick={handleBooking}
           />
         </div>
       </div>

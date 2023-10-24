@@ -6,7 +6,7 @@ function Input(props) {
     <>
       <div className="flex flex-col mb-4">
         <label
-          className="text-black mt-5 font-normal"
+          className="text-black mt-5 font-normal" {...props}
           htmlFor={id}
         >
           {label}

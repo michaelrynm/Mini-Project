@@ -1,12 +1,13 @@
 import React from "react";
 
 function Input(props) {
-  const { label, id, error, name, type, placeholder } = props;
+  const { label, id, error, name, type, placeholder, onChange } = props;
   return (
     <>
       <div className="flex flex-col mb-4">
         <label
-          className="text-black mt-5 font-normal" {...props}
+          className="text-black mt-5 font-normal"
+          {...props}
           htmlFor={id}
         >
           {label}
@@ -15,7 +16,11 @@ function Input(props) {
           placeholder={placeholder}
           type={type}
           className="input input-bordered w-full text-white"
+          onChange={onChange}
         />
+        <label htmlFor="">
+          <span className="label-text-alt text-red-600">{error}</span>
+        </label>
       </div>
     </>
   );

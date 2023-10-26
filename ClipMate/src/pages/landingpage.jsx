@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import Button from "../components/button";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 import { BsScissors, BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { FaPumpSoap, FaWineBottle, FaLocationArrow } from "react-icons/fa";
@@ -9,10 +10,23 @@ import { GiRazor } from "react-icons/gi";
 
 export default function Landingpage() {
   const navigate = useNavigate()
+  const [isLogin, setIsLogin] = useState(false)
+ 
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn")
+    if (isLoggedIn) {
+      setIsLogin(true)
+    }
+  }, [])
 
   const handleBooking = (e) => {
     e.preventDefault()
+    if(isLogin) {
     navigate("/booking")
+    }else {
+    navigate("/login")
+    }
   }
 
   return (

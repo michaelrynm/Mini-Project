@@ -1,7 +1,7 @@
 import React from "react";
 
 function Input(props) {
-  const { label, id, error, name, type, placeholder, onChange } = props;
+  const { label, id, error, name, type, placeholder, onChange, register, readonly, value} = props;
   return (
     <>
       <div className="flex flex-col mb-4">
@@ -17,6 +17,10 @@ function Input(props) {
           type={type}
           className="input input-bordered w-full text-white"
           onChange={onChange}
+          name={name}
+          readOnly={readonly}
+          value={value}
+          {...register? register(name, {required: true}) : {}}
         />
         <label htmlFor="">
           <span className="label-text-alt text-red-600">{error}</span>

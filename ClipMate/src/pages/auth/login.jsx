@@ -37,6 +37,10 @@ export default function Login() {
       username: "user",
       password: "password123",
     };
+    const dummyAdmin = {
+      username: "admin",
+      password: "admin123"
+    }
 
     localStorage.setItem("dummyUser", JSON.stringify(dummyUser));
 
@@ -47,6 +51,13 @@ export default function Login() {
         title: "Signed in successfully",
       });
       navigate("/");
+    }else if (username === dummyAdmin.username && password === dummyAdmin.password){
+      localStorage.setItem("isLoggedIn", "true");
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully",
+      });
+      navigate("/admin");
     } else {
       setError("Username atau Password salah");
     }

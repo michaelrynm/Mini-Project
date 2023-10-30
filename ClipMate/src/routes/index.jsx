@@ -6,7 +6,7 @@ import Register from "../pages/auth/register";
 import Booking from "../pages/booking";
 import Profile from "../pages/profile";
 import Admin from "../pages/admin";
-import Recipt from "../pages/auth/recipt";
+import Recipt from "../pages/recipt";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -15,8 +15,8 @@ export default function Router() {
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn === "true") {
-      setIsLogin(true);
+    if (isLoggedIn) {
+      setIsLogin(true)
     }
   }, []);
 
@@ -39,7 +39,7 @@ export default function Router() {
     },
     {
       path: "/booking/recipt",
-      element: isLogin === "true" ? <Recipt /> : <Navigate to="/login" />,
+      element: isLogin ? <Recipt /> : <Navigate to="/login" />
     },
     {
       path: "profile",

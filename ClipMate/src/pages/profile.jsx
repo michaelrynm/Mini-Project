@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import { useNavigate } from "react-router-dom";
 import Service from "../components/service";
@@ -55,7 +55,7 @@ export default function Profile() {
             <p>Sculpting Style, Shaping Lives - Your Trusted Barber</p>
             <div className="card-actions justify-end">
               <button
-                className="btn btn-primary"
+                className="btn bg-yellow-600"
                 onClick={handleBook}
               >
                 Make Appointment
@@ -76,7 +76,7 @@ export default function Profile() {
             <p>Where Tradition Meets Trend: Your Premier Barbershop Experience.</p>
             <div className="card-actions justify-end">
               <button
-                className="btn btn-primary"
+                className="btn bg-yellow-600"
                 onClick={handleBook}
               >
                 Make Appointment
@@ -97,7 +97,7 @@ export default function Profile() {
             <p>Precision Cuts, Timeless Confidence - Your Barber, Your Identity</p>
             <div className="card-actions justify-end">
               <button
-                className="btn btn-primary"
+                className="btn bg-yellow-600"
                 onClick={handleBook}
               >
                 Make Appointment

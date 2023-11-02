@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./button";
 import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -39,7 +39,7 @@ export default function Navbar() {
     }
   }, []);
   return (
-    <div className="flex bg-zinc-800 p-6 justify-between">
+    <div className="flex bg-zinc-800 p-6 justify-between items-center fixed w-full z-50">
       <div className="flex text-white gap-10">
         <Link to={"/"}>HOME</Link>
         {isLogin ? <Link to={"/booking"}>BOOKING</Link> : <Link to={"/login"}>BOOKING</Link>}
@@ -51,7 +51,7 @@ export default function Navbar() {
             <Button
               label="Log out"
               aria-label="btn-logout"
-              className="bg-yellow-600 text-black rounded-full pe-4 ps-4 pt-1 pb-1"
+              className="btn bg-yellow-600 text-black rounded-full pe-4 ps-4 pt-1 pb-1 hover:text-white"
               onClick={handleLogout}
             />
           </div>
@@ -60,13 +60,13 @@ export default function Navbar() {
             <Button
               label="Log In"
               aria-label="btn-login"
-              className="bg-white text-black rounded-full pe-4 ps-4 pt-1 pb-1"
+              className="btn bg-white text-black rounded-full hover:text-white"
               onClick={() => navigate("/login")}
             />
             <Button
               label="Sign Up"
               aria-label="btn-signup"
-              className="bg-yellow-600 rounded-full pe-4 ps-4 pt-1 pb-1"
+              className="btn bg-yellow-600 rounded-full pe-4 ps-4 pt-1 pb-1 text-white"
               onClick={() => navigate("/register")}
             />
           </div>

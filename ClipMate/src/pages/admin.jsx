@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../components/button";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -6,13 +6,11 @@ import Swal from "sweetalert2";
 
 export default function Admin() {
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(false);
   const [dataTable, setDataTable] = useState([]);
 
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("isLoggedIn");
-    setIsLogin(false);
     navigate("/");
   };
 
@@ -20,7 +18,6 @@ export default function Admin() {
     try {
       const result = await axios.get("https://651a7c97340309952f0d5fdb.mockapi.io/api/v1/appointment");
       setDataTable(result.data);
-      console.log(dataTable);
     } catch (error) {
       console.log(error);
     }

@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Navigate, redirectDocument } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
 import Landingpage from "../pages/landingpage";
 import Login from "../pages/auth/login";

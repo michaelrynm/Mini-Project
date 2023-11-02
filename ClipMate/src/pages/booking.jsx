@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Layout from "../components/layout";
 import { Input } from "../components/input";
 
@@ -55,7 +55,6 @@ export default function Booking() {
     try {
       const response = await axios.post("https://651a7c97340309952f0d5fdb.mockapi.io/api/v1/appointment", data);
       setDataTable((dataTable) => [...dataTable, response.data]);
-      console.log("Response from server", response.data);
       Toast.fire({
         icon: "success",
         title: "Form Submitted",
@@ -202,7 +201,7 @@ export default function Booking() {
               <div className="flex justify-center mt-5 mb-5">
                 <Button
                   label="Make Appointment"
-                  className="btn btn-primary "
+                  className="btn bg-yellow-600 "
                 />
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import { Input } from "../components/input";
 import Button from "../components/button";
@@ -14,7 +14,6 @@ export default function Recipt() {
     try {
       const result = await axios.get("https://651a7c97340309952f0d5fdb.mockapi.io/api/v1/appointment");
       setReciptData(result.data);
-      console.log(reciptData)
     } catch (error) {
       console.log(error);
     }

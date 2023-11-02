@@ -1,33 +1,31 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import Button from "../components/button";
 import { useNavigate } from "react-router-dom";
-import Swal from 'sweetalert2'
 
 import { BsScissors, BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { FaPumpSoap, FaWineBottle, FaLocationArrow } from "react-icons/fa";
 import { GiRazor } from "react-icons/gi";
 
 export default function Landingpage() {
-  const navigate = useNavigate()
-  const [isLogin, setIsLogin] = useState(false)
- 
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn")
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn) {
-      setIsLogin(true)
+      setIsLogin(true);
     }
-  }, [])
+  }, []);
 
   const handleBooking = (e) => {
-    e.preventDefault()
-    if(isLogin) {
-    navigate("/booking")
-    }else {
-    navigate("/login")
+    e.preventDefault();
+    if (isLogin) {
+      navigate("/booking");
+    } else {
+      navigate("/login");
     }
-  }
+  };
 
   return (
     <>
@@ -45,7 +43,7 @@ export default function Landingpage() {
         <div className="flex justify-center mt-5">
           <Button
             label="Book Now"
-            className="text-white bg-yellow-600 rounded-full w-32 h-16 font-serif font-bold"
+            className="btn text-white bg-yellow-600 rounded-full w-32 h-16 font-serif font-bold"
             onClick={handleBooking}
           />
         </div>
@@ -102,7 +100,7 @@ export default function Landingpage() {
           <div className="text-center text-white pt-16">
             <h2 className="font-serif font-bold text-3xl text-center text-white">ABOUT US</h2>
           </div>
-          <div className="columns-2 text-white pb-20 pe-20 flex justify-center gap-40 text-center mt-10">
+          <div className="columns-2 text-white pb-20 gap-40 flex justify-center  text-center mt-10">
             <div className="bg-black w-4/12 h-96 p-8 flex justify-center items-center rounded-3xl">
               <div>
                 <p className="font-medium">
@@ -112,24 +110,18 @@ export default function Landingpage() {
                 <p className="font-medium mt-5">In case you feel low or needs some socials. feel free to visit us and absorb our blastful and positive aural.</p>
               </div>
             </div>
-            <div className="bg-black w-4/12 h-96 p-8 justify-center items-center flex flex-col gap-10 rounded-3xl">
-              <div className="flex items-center gap-5 text-2xl">
-                <p className="text-white">
-                  <FaLocationArrow/>
-                </p>
-                <p>Semarang</p>
-              </div>
-              <div className="flex items-center gap-5 text-2xl">
-                <p className="text-white">
-                  <BsWhatsapp/>
-                </p>
-                <p>+62 12345678891</p>
-              </div>
-              <div className="flex items-center gap-5 text-2xl">
-                <p className="text-white">
-                  <BsInstagram/>
-                </p>
-                <p>ClipMate</p>
+            <div className="bg-black w-4/12 h-96 p-8 flex justify-center rounded-3xl">
+              <div className="columns-2 flex items-center gap-5">
+                <div className="text-2xl flex flex-col gap-14">
+                  <BsWhatsapp />
+                  <BsInstagram />
+                  <FaLocationArrow />
+                </div>
+                <div className="text-2xl flex flex-col gap-12 text-start font-medium">
+                  <p>Semarang</p>
+                  <p>+6282412421421</p>
+                  <p>ClipMate</p>
+                </div>
               </div>
             </div>
           </div>

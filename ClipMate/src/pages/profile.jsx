@@ -12,22 +12,22 @@ import person2 from "../assets/person2.png";
 import person3 from "../assets/person3.png";
 
 export default function Profile() {
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn")
-    if (isLoggedIn){
-      setIsLogin(true)
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn) {
+      setIsLogin(true);
     }
-  },[])
+  }, []);
 
   const navigate = useNavigate();
 
   const handleBook = (e) => {
     e.preventDefault();
-    if(isLogin) {
+    if (isLogin) {
       navigate("/booking");
-    }else {
-      navigate("/login")
+    } else {
+      navigate("/login");
     }
   };
   return (

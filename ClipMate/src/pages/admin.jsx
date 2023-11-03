@@ -19,7 +19,7 @@ export default function Admin() {
       const result = await axios.get("https://651a7c97340309952f0d5fdb.mockapi.io/api/v1/appointment");
       setDataTable(result.data);
     } catch (error) {
-      console.log(error);
+      Swal.fire("Error Message", `${error}`, "error");
     }
   }
 
@@ -33,10 +33,9 @@ export default function Admin() {
         const id = dataTable[index].id;
         const url = `https://651a7c97340309952f0d5fdb.mockapi.io/api/v1/appointment/${id}`;
         const response = await axios.delete(url);
-        console.log("Response from server: ", response.data);
         fetchData();
       } catch (error) {
-        console.log(error);
+        Swal.fire("Error Message", `${error}`, "error");
       }
     }
 

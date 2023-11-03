@@ -4,18 +4,18 @@ import { Input } from "../components/input";
 import Button from "../components/button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import Swal from "sweetalert2";
 
 export default function Recipt() {
   const [reciptData, setReciptData] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function fetchData() {
     try {
       const result = await axios.get("https://651a7c97340309952f0d5fdb.mockapi.io/api/v1/appointment");
       setReciptData(result.data);
     } catch (error) {
-      console.log(error);
+      Swal.fire("Error Message", `${error}`, "error");
     }
   }
 
@@ -23,7 +23,7 @@ export default function Recipt() {
     fetchData();
   }, []);
 
-  const fullname = reciptData.length > 0 ? reciptData[reciptData.length -1].name : ""
+  const fullname = reciptData.length > 0 ? reciptData[reciptData.length - 1].name : "";
 
   return (
     <div>
@@ -97,7 +97,7 @@ export default function Recipt() {
             <Button
               label="Continiue"
               className="btn btn-primary"
-              onClick={()=> navigate("/")}
+              onClick={() => navigate("/")}
             />
           </div>
         </div>

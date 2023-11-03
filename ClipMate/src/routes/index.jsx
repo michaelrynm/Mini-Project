@@ -7,6 +7,7 @@ import Booking from "../pages/booking";
 import Profile from "../pages/profile";
 import Admin from "../pages/admin";
 import Recipt from "../pages/recipt";
+import Consult from "../pages/consult";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -48,6 +49,10 @@ export default function Router() {
     {
       path: "admin",
       element: <Admin />,
+    },
+    {
+      path: "consult",
+      element: <Consult />
     },
     {
       path: "*",

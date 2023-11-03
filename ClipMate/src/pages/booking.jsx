@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 const schema = z.object({
   name: z.string().min(1),
   gender: z.string().min(1),
-  phone: z.string().min(12, {message: "Phone Number Required Minimum 12"}),
+  phone: z.string().min(12, { message: "Phone Number Required Minimum 12" }),
   date: z.string(),
   time: z.string(),
   barberman: z.string().min(1),
@@ -22,7 +22,7 @@ const schema = z.object({
 });
 
 export default function Booking() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -34,7 +34,7 @@ export default function Booking() {
       gender: "",
       barberman: "",
       service: "",
-    }
+    },
   });
 
   const [dataTable, setDataTable] = useState([]);
@@ -59,12 +59,12 @@ export default function Booking() {
         icon: "success",
         title: "Form Submitted",
       });
-      reset()
-      setTimeout(()=>{
-        navigate("/booking/recipt")
-      }, 2000)
+      reset();
+      setTimeout(() => {
+        navigate("/booking/recipt");
+      }, 2000);
     } catch (error) {
-      console.log("Error", error);
+      Swal.fire("Error Message", `${error}`, "error");
     }
   };
 

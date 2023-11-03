@@ -39,11 +39,12 @@ export default function Navbar() {
     }
   }, []);
   return (
-    <div className="flex bg-zinc-800 p-6 justify-between items-center fixed w-full z-50">
+    <div className="flex bg-zinc-800 p-6 justify-between items-center sticky top-0 w-full z-10">
       <div className="flex text-white gap-10">
         <Link to={"/"}>HOME</Link>
         {isLogin ? <Link to={"/booking"}>BOOKING</Link> : <Link to={"/login"}>BOOKING</Link>}
         <Link to={"/profile"}>PROFILE</Link>
+        <Link to={"/consult"}>AI CONSULTANT</Link>
       </div>
       <div className="flex text-white gap-10">
         {isLogin ? (

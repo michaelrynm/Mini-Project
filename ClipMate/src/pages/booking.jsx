@@ -60,9 +60,9 @@ export default function Booking() {
         title: "Form Submitted",
       });
       reset();
-      setTimeout(() => {
-        navigate("/booking/recipt");
-      }, 2000);
+      navigate("/booking/recipt");
+      // setTimeout(() => {
+      // }, 2000);
     } catch (error) {
       Swal.fire("Error Message", `${error}`, "error");
     }

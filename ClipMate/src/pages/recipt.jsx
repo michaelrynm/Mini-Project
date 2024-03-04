@@ -9,6 +9,14 @@ import Swal from "sweetalert2";
 export default function Recipt() {
   const [reciptData, setReciptData] = useState([]);
   const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn) {
+      setIsLogin(true)
+    }
+  }, []);
 
   async function fetchData() {
     try {
